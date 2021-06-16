@@ -12,18 +12,30 @@ export const Services = (props) => {
         <div className='row'>
           {props.data
             ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className='col-md-4'>
-                  {' '}
-                  <i className={d.icon}></i>
-                  <div className='service-desc'>
-                    <h3>{d.name}</h3>
-                    <p>{d.text}</p>
-                  </div>
-                </div>
+                <div key={`${d.name}-${i}`}>
+                  <div className='portfolio-items'>
+                    <div className='col-sm-6 col-md-4 col-lg-4'>
+                      <div className='portfolio-item'>
+                        <div className='hover-bg'>
+                          <a href="https://www.google.com"  target="_blank">
+                            <div className='hover-text'>
+                              <h4>{d.name}</h4>
+                            </div>
+                            </a>
+                            <img
+                              src={d.icon}
+                              className='img-responsive'
+                              alt='Project Title'
+                            />
+                        </div>{' '}
+                      </div>
+                    </div>
+                    </div>
+                    </div>
               ))
             : 'loading'}
         </div>
       </div>
-    </div>
+      </div>
   )
 }
